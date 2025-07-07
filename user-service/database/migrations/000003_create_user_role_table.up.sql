@@ -5,5 +5,5 @@ CREATE TABLE IF NOT EXISTS user_role (
    
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NULL,
-    deleted_at TIMESTAMP NULL,
+    deleted_at TIMESTAMP NULL
 );

@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS users (
     is_verified boolean DEFAULT FALSE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NULL,
-    deleted_at TIMESTAMP NULL,
+    deleted_at TIMESTAMP NULL
 );
 
 CREATE INDEX idx_users_email ON users(email);
