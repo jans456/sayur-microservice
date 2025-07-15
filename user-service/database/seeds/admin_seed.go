@@ -17,7 +17,7 @@ func SeedAdmin(db *gorm.DB) {
 	}
 
 	modelRole := model.Role{}
-	err = db.Where("name =?", "Super Admin").First(&modelRole).Error
+	err = db.Where("name = ?", "Super Admin").First(&modelRole).Error
 	if err != nil {
 		log.Fatalf("%s: %v", err.Error(), err)
 	}
@@ -27,7 +27,7 @@ func SeedAdmin(db *gorm.DB) {
 		Email:		"superadmin@gmail.com",
 		Password:	bytes,
 		IsVerified:	true,
-		Roles: 		[]model.Role{},
+		Roles: 		[]model.Role{modelRole},
 	}
 
 	if err := db.FirstOrCreate(&admin, model.User{Email: "superadmin@gmail.com"}).Error; err != nil {
