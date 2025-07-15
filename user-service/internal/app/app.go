@@ -26,8 +26,13 @@ func RunServer() {
 		return
 	}
 
+
+
 	userRepo := repository.NewUserRepository(db.DB)
-	userService := service.NewUserService(userRepo)
+
+	jwtService := service.NewJwtService(cfg)
+	
+	userService := service.NewUserService(userRepo, cfg, jwtService)
 
 	e := echo.New()
 	e.Use(middleware.CORS())
