@@ -86,6 +86,6 @@ func NewUserHandler(e *echo.Echo, userService service.UserServiceInterface) User
 	userHandler := &userHandler{userService: userService}
 
 	e.Use(middleware.Recover())
-	e.POST("/Signin", userHandler.SignIn)
+	e.POST("/signin", userHandler.SignIn)
 	return userHandler
 }
